@@ -9527,6 +9527,14 @@ button.bg-dark:focus {
 
 .text-primary {
   color: #17a2b8 !important;
+  font-size: 20px
+}
+
+.icon-size {
+  width: 150px; /* Ajuste o tamanho conforme necessário */
+  height: 150px; /* Torne a imagem quadrada como um ícone */
+  /* display: inline-block; Garante que ela se comporte como um ícone */
+  object-fit: contain; /* Ajusta o conteúdo da imagem se necessário */
 }
 
 a.text-primary:hover, a.text-primary:focus {
@@ -9713,6 +9721,26 @@ a.text-dark:hover, a.text-dark:focus {
   }
 }
 
+@media (max-width: 480px) {
+  .icon-size {
+    width: 50px; /* Ainda menor em telas menores */
+    height: 50px;
+  }
+}
+
+.icon-size {
+  width: 150px; /* Tamanho padrão */
+  height: 150px;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .icon-size {
+    width: 80px; /* Reduz no mobile */
+    height: 80px;
+  }
+}
+
 /********** Custom CSS ************/
 .section-title {
   position: relative;
@@ -9863,4 +9891,56 @@ a.text-dark:hover, a.text-dark:focus {
   margin: 0;
   padding: 0;
   list-style-type: none;
+}
+
+/* CSS FEITO POR GUSTAVO ------------------------------------------------------------------------- */
+
+.custom-container {
+  background-color: #007bff; /* Cor azul */
+  padding: 20px; /* Reduzindo padding geral para aproximar os elementos das margens */
+  min-height: 60vh; /* Altura mínima para o container */
+}
+
+.custom-container .row {
+  height: 100%; /* Garante que a row ocupe toda a altura do container */
+  align-items: flex-start; /* Alinha os itens ao topo */
+}
+
+.custom-container .col-lg-6 {
+  padding-top: 0; /* Remove o padding superior da coluna */
+  padding-bottom: 0; /* Remove o padding inferior da coluna */
+}
+
+.custom-container h4, .custom-container h1, .custom-container p {
+  margin-top: 30px; /* Remove a margem superior desses elementos */
+  padding-top: 0px; /* Remove qualquer padding extra */
+}
+
+.custom-container h1 {
+  margin-bottom: 10px; /* Ajuste do espaço inferior do título */
+}
+
+.custom-container p {
+  margin-bottom: 30px; /* Ajuste para o parágrafo */
+}
+
+.custom-container .btn {
+  margin-top: 10px; /* Ajuste do espaço entre o botão e o parágrafo */
+}
+
+.custom-container img {
+  max-height: 100%; /* Limita a altura da imagem */
+  width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível */
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+}
+
+@media (max-width: 768px) {
+  .custom-container {
+    padding: 10px 10px; /* Menos padding em dispositivos móveis */
+    min-height: 50vh; /* Menor altura mínima em telas pequenas */
+  }
+
+  .custom-container .btn {
+    margin-top: 10px; /* Ajuste adicional para telas menores */
+  }
 }
