@@ -215,6 +215,41 @@
     <a href="#" class="btn btn-primary p-3 back-to-top"><i class="fa fa-angle-double-up"></i></a>
 
 
+
+    <script>
+        document.getElementById("sendMessageButton").addEventListener("click", function (event) {
+          event.preventDefault();
+      
+          // Obtendo os valores do formulário
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+      
+          // Validando os campos
+          if (!name || !email || !subject || !message) {
+            alert("Por favor, preencha todos os campos.");
+            return;
+          }
+      
+          // Montando a mensagem
+          const whatsappMessage = `Olá, meu nome é ${name}. 
+      Meu email é ${email}.
+      Assunto: ${subject}.
+      Mensagem: ${message}`;
+      
+          // Substitua "NUMERO_DE_TELEFONE" pelo seu número no formato internacional
+          const phoneNumber = "5581993241624";
+          const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+      
+          // Redireciona o usuário para o WhatsApp
+          window.open(whatsappUrl, "_blank");
+        });
+      </script>
+
+
+
+
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
